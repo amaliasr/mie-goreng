@@ -57,7 +57,7 @@
     <div class="container pt-5 pb-5 text-center">
       <div class="row justify-content-md-center align-items-center">
         <!-- <div class="col-2" style="border-color: black;height:20px;border-width: 1px;">kk</div> -->
-        <?php foreach ($game_asc as $key) {
+        <?php foreach ($game_list as $key) {
           if ($key->status != "disable") { ?>
             <div class="col-6 col-md-3 mt-3">
               <a href="">
