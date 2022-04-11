@@ -1,7 +1,8 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-// coba git 2
 // angel e
+
+//ulalalalalala
 
 class Home extends CI_Controller
 {
