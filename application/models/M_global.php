@@ -143,7 +143,6 @@ class M_global extends CI_Model
 
 	public function tampilGame()
 	{
-	{
 		$query = $this->db->query("SELECT * FROM game_detail
 		JOIN game ON game_detail.id_game = game.id_game");
 		return $query->result();
