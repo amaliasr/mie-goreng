@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-// coba git
+
 class Home extends CI_Controller
 {
 
@@ -31,7 +31,6 @@ class Home extends CI_Controller
 			'form' 				=> $this->m_global->tampil('form', 'id_form'),
 			'input' 			=> $this->m_global->tampil_asc('input', 'id_input'),
 			'sosmed' 			=> $this->m_global->sosmed(),
-			'game_list'			=> $this->m_global->tampilGame()
 		);
 		$this->load->model('M_Api', 'mapi');
 	}
@@ -341,6 +340,45 @@ Bukti transfer akan saya kirim segera
 		//    );
 		//    $this->db->insert("user",$dataq);
 		redirect('https://api.whatsapp.com/send?phone=' . $phone . '&text=' . $kalimat);
+	}
+
+	public function loadmyorder()
+	{
+		$data = $this->data;
+		$this->load->view('home/myorder', $data);
+	}
+
+	public function myorder()
+	{
+		$stringParam = $this->input->post('param');
+		// $this->load->library('pagination');
+
+		// $config['full_tag_open'] = '<ul class="pagination">';
+		// $config['full_tag_close'] = '</ul>';
+		// $config['prev_link'] = '<i class="fa fa-chevron-left"></i>';
+		// $config['prev_tag_open'] = '<li>';
+		// $config['prev_tag_close'] = '</li>';
+		// $config['next_link'] = '<i class="fa fa-chevron-right"></i>';
+		// $config['next_tag_open'] = '<li>';
+		// $config['next_tag_close'] = '</li>';
+		// $config['cur_tag_open'] = '<li class="active"><a href="#">';
+		// $config['cur_tag_close'] = '</a></li>';
+		// $config['num_tag_open'] = '<li>';
+		// $config['num_tag_close'] = '</li>';
+		// $config['first_tag_open'] = '<li>';
+		// $config['first_tag_close'] = '</li>';
+		// $config['last_tag_open'] = '<li>';
+		// $config['last_tag_close'] = '</li>';
+		// $config['first_link'] = 'First';
+		// $config['last_link'] = 'Last';
+		// $config['base_url'] = base_url('c_home/loadPageUser');
+		// $config['per_page'] = 25;
+		// $config['total_rows'] = $this->M_global->getJumlahhistory($stringParam);
+		// $offset = $this->uri->segment(3);
+		// $this->pagination->initialize($config);
+
+		$data = $this->m_global->gethistory($stringParam);
+		echo json_encode($data);
 	}
 }
 

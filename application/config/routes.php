@@ -99,6 +99,10 @@ $route['minmin/produk/(:any)'] = "admin/produk/$1";
 $route['minmin/produk/(:any)/(:any)'] = "admin/produk_detail/$1/$2";
 
 
+$route['home/loadmyorder'] = "home/loadmyorder";
+$route['home/history'] = "home/myorder";
+
+
 $route['send/(:any)'] = "home/send/$1";
 $route['review/(:any)'] = "home/review/$1";
 $route['top_up/(:any)'] = "home/fill_detail/$1";
