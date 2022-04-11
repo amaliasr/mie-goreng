@@ -1,6 +1,9 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-// coba git
+// angel e
+
+//ulalalalalala
+
 class Home extends CI_Controller
 {
 
@@ -66,7 +69,6 @@ class Home extends CI_Controller
 	}
 	public function fetch_ml_account()
 	{
-
 		echo json_encode($this->mapi->getMLAccountData($_POST['user_id'], $_POST['zone_id']));
 	}
 	public function fill_detail($link)
@@ -114,7 +116,6 @@ class Home extends CI_Controller
 			$randomString .= $characters[rand(0, $charactersLength - 1)];
 		}
 		$data['code_transaction'] = $randomString;
-
 		// if empty
 		if ($available) {
 			if ($available == 'game') {
@@ -131,7 +132,6 @@ class Home extends CI_Controller
 			$this->load->view('home/error', $data);
 		}
 	}
-
 	public function review($code_transaction)
 	{
 		$data = $this->data;
@@ -142,7 +142,6 @@ class Home extends CI_Controller
 		$data['zone_id'] 		= $this->input->post('zone_id');
 		$data['nama_di_game'] 	= $this->input->post('nama_di_game');
 		$data['id_item_price'] 	= $this->input->post('id_item_price');
-
 		if ($data['available'] == 'game') {
 			$data['id_game'] 		= $this->input->post('id_game');
 			foreach ($data['item_price'] as $key) {
@@ -186,7 +185,6 @@ class Home extends CI_Controller
 				$available = "yes";
 			}
 		}
-
 		if ($available) {
 			// code transaction
 			$characters = '0123456789';
@@ -266,64 +264,50 @@ class Home extends CI_Controller
 		// }
 		if ($status_pay == 'retail') {
 			$kalimat = urlencode("$title
-
 ID (SERVER)	: *$user_id ($zone_id)*
 NAMA DI GAME: $nama_di_game
 ORDER 		: $qty $nama_item
 PEMBAYARAN	: $nama_payment
 HARGA 		: Rp *$total*
-
 Aku tunggu kode nya ya kak
 ");
 		} else if ($status_pay == 'online') {
 			$kalimat = urlencode("$title
-
 ID (SERVER)	: *$user_id ($zone_id)*
 NAMA DI GAME: $nama_di_game
 ORDER 		: $qty $nama_item
-
 Nanti aku bayar Rp *$total*
 pakai $nama_payment
-
 Bukti transfer akan saya kirim segera
 ");
 		} else if ($status_pay == 'pulsa') {
 			$kalimat = urlencode("$title
-
 ID (SERVER)	: *$user_id ($zone_id)*
 NAMA DI GAME: $nama_di_game
 ORDER 		: $qty $nama_item
-
 Nanti aku transfer pulsa Rp *$total*
 Ke $nama_payment $code_pay
-
 Bukti transfer akan saya kirim segera
 ");
 		} else {
 			if ($structure == 'txt') {
 				$kalimat = urlencode("$title
-
 ID (SERVER)	: *$user_id ($zone_id)*
 NAMA DI GAME: $nama_di_game
 ORDER 		: $nama
-
 Nanti aku transfer Rp *$total*
 Ke Rekening $nama_payment - $code_pay
 Atas Nama: $an
-
 Bukti transfer akan saya kirim segera
 ");
 			} else {
 				$kalimat = urlencode("$title
-
 ID (SERVER)	: *$user_id ($zone_id)*
 NAMA DI GAME: $nama_di_game
 ORDER 		: $qty $nama_item
-
 Nanti aku transfer Rp *$total*
 Ke Rekening $nama_payment - $code_pay
 Atas Nama: $an
-
 Bukti transfer akan saya kirim segera
 ");
 			}
@@ -342,7 +326,45 @@ Bukti transfer akan saya kirim segera
 		//    $this->db->insert("user",$dataq);
 		redirect('https://api.whatsapp.com/send?phone=' . $phone . '&text=' . $kalimat);
 	}
+
+	public function loadmyorder()
+	{
+		$data = $this->data;
+		$this->load->view('home/myorder', $data);
+	}
+
+	public function myorder()
+	{
+		$stringParam = $this->input->post('param');
+		// $this->load->library('pagination');
+
+		// $config['full_tag_open'] = '<ul class="pagination">';
+		// $config['full_tag_close'] = '</ul>';
+		// $config['prev_link'] = '<i class="fa fa-chevron-left"></i>';
+		// $config['prev_tag_open'] = '<li>';
+		// $config['prev_tag_close'] = '</li>';
+		// $config['next_link'] = '<i class="fa fa-chevron-right"></i>';
+		// $config['next_tag_open'] = '<li>';
+		// $config['next_tag_close'] = '</li>';
+		// $config['cur_tag_open'] = '<li class="active"><a href="#">';
+		// $config['cur_tag_close'] = '</a></li>';
+		// $config['num_tag_open'] = '<li>';
+		// $config['num_tag_close'] = '</li>';
+		// $config['first_tag_open'] = '<li>';
+		// $config['first_tag_close'] = '</li>';
+		// $config['last_tag_open'] = '<li>';
+		// $config['last_tag_close'] = '</li>';
+		// $config['first_link'] = 'First';
+		// $config['last_link'] = 'Last';
+		// $config['base_url'] = base_url('c_home/loadPageUser');
+		// $config['per_page'] = 25;
+		// $config['total_rows'] = $this->M_global->getJumlahhistory($stringParam);
+		// $offset = $this->uri->segment(3);
+		// $this->pagination->initialize($config);
+
+		$data = $this->m_global->gethistory($stringParam);
+		echo json_encode($data);
+	}
 }
 
 /* End of file Home.php */
-/* Location: ./application/controllers/Home.php */
