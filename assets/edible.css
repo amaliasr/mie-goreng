@@ -14,6 +14,10 @@ html {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
+.bg-informasi{
+  background-color: #90E0EF;
+  height: 200px;
+}
 .color-footer{
   background: rgb(41,96,161);
   background: linear-gradient(114deg, rgba(41,96,161,1) 25%, rgba(194,57,212,1) 86%);
