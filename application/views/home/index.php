@@ -53,7 +53,7 @@
       </button>
     </div>
   </div> -->
-  <div class="bg-list">
+  <div class="bg-list mb-5">
     <div class="container pt-5 pb-5 text-center">
       <div class="row justify-content-md-center align-items-center">
         <!-- <div class="col-2" style="border-color: black;height:20px;border-width: 1px;">kk</div> -->
@@ -77,6 +77,9 @@
 
       </div>
     </div>
+  </div>
+  <div class="bg-informasi">
+
   </div>
 
   <?php $this->load->view('home/footer'); ?>
