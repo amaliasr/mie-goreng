@@ -25,7 +25,7 @@
         <ul class="navbar-nav mr-auto">
           <li class="nav-item mr-3 ml-3"><a class="text-white" href="#">Home</a></li>
           <li class="nav-item mr-3 ml-3"><a class="text-white" href="#">Buy</a></li>
-          <li class="nav-item mr-3 ml-3"><a class="text-white" href="#">My Order</a></li>
+          <li class="nav-item mr-3 ml-3"><a class="text-white" href="<?php base_url() ?>home/loadmyorder">My Order</a></li>
         </ul>
         <!-- <ul class="navbar-nav mr-auto">
           <li class="nav-item dropdown">
