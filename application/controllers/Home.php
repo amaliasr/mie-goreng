@@ -31,6 +31,7 @@ class Home extends CI_Controller
 			'form' 				=> $this->m_global->tampil('form', 'id_form'),
 			'input' 			=> $this->m_global->tampil_asc('input', 'id_input'),
 			'sosmed' 			=> $this->m_global->sosmed(),
+			'game_list'			=> $this->m_global->tampilGame()
 		);
 		$this->load->model('M_Api', 'mapi');
 	}

@@ -57,20 +57,24 @@
     <div class="container pt-5 pb-5 text-center">
       <div class="row justify-content-md-center align-items-center">
         <!-- <div class="col-2" style="border-color: black;height:20px;border-width: 1px;">kk</div> -->
-        <?php foreach ($game_asc as $key) {
-          if ($key->status != "disable") { ?>
+        <?php foreach ($game_list as $key) {
+          if ($key->status_detail != "disable") { ?>
             <div class="col-6 col-md-3 mt-3">
-              <a href="">
-                <div class="row border border-list mr-2 p-2 mt-2 justify-content-center align-self-center hover-item">
-                  <div class="col-4">
-                    <img src="https://cdn.moogold.com/2019/11/mobile-legends-bang-bang.jpg" class="imgshape-list" alt="...">
+              <?php if ($key->status_detail == "on") { ?>
+                <a href="<?= site_url('top_up/' . $key->link_detail) ?>">
+                <?php } else { ?>
+                  <a>
+                  <?php } ?>
+                  <div class="row border border-list mr-2 p-2 mt-2 justify-content-center align-self-center hover-item">
+                    <div class="col-4">
+                      <img src="<?= base_url() ?>assets/img/game/<?= $key->image_detail ?>" class="imgshape-list" alt="...">
+                    </div>
+                    <div class="col-8">
+                      <p class="figure-caption m-1"><b><?= $key->nama_game ?></b></p>
+                      <p class="figure-caption m-1"><?= $key->nama_game_detail ?></p>
+                    </div>
                   </div>
-                  <div class="col-8">
-                    <p class="figure-caption m-1"><b>Mobile Legends</b></p>
-                    <p class="figure-caption m-1">FAST 24 JAM</p>
-                  </div>
-                </div>
-              </a>
+                  </a>
             </div>
         <?php }
         } ?>

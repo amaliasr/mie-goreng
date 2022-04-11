@@ -20,7 +20,7 @@
 
         <div class="col-12 col-md-4 mb-3">
           <img src="<?= base_url() ?>assets/img/game/<?= $image_info ?>" style="width: 100%" class='mb-2 imgdetail'>
-          <div class="text-white"><?= $text_info ?></div>
+          <div class="text-dark"><?= $text_info ?></div>
         </div>
         <div class="col-12 col-md-8">
           <div class="pt-4 pb-4 pr-4 pl-4">
@@ -31,13 +31,13 @@
                   <div class="circle">1</div>
                 </div>
                 <div>
-                  <div class="title mb-3">Masukkan ID</div>
+                  <div class="title mb-3 text-dark">Masukkan ID</div>
                   <div class="row">
                     <?php foreach ($input as $row) {
                       if (!empty($inputan[$row->id_input])) { ?>
                         <div class="col-6 col-md-6 my-1">
                           <input type="<?= $row->type ?>" id="<?= $row->variable_input ?>" class="form-control form-width mb-2" placeholder="<?= $inputan[$row->id_input] ?>" name="<?= $row->variable_input ?>" value="<?= $this->session->userdata($row->variable_input) ?>" required>
-                          <small id="<?= $row->variable_input ?>-txt" class="form-text text-danger"></small>
+                          <small id="<?= $row->variable_input ?>-txt" class="form-text text-danger text-dark"></small>
 
                         </div>
                     <?php }
@@ -59,9 +59,11 @@
                     </div>
                   </div>
                   <input type="hidden" name="available" value="<?= $available ?>">
-                  <p>Name in Game : <b class="text-warning" id="name_in_game">-</b><div class="spinner-border" id="spinner"></div></p>
+                  <!-- <p>Name in Game : <b class="text-warning" id="name_in_game">-</b> -->
+                  <div class="spinner-border" id="spinner"></div>
+                  </p>
                   <?php foreach ($hint_id as $row) { ?>
-                    <small>Hint : <?= $row->isi_hint ?></small>
+                    <small class="text-dark">Hint : <?= $row->isi_hint ?></small>
                   <?php } ?>
                 </div>
               </div>
@@ -70,7 +72,7 @@
                   <div class="circle">2</div>
                 </div>
                 <div>
-                  <div class="title mb-3">Pilih Item</div>
+                  <div class="title mb-3 text-dark">Pilih Item</div>
                   <div class="row">
                     <?php if ($available == 'game') { ?>
                       <input type="hidden" name="id_game" value="<?= $id_game ?>">
@@ -115,7 +117,7 @@
                   <div class="circle">3</div>
                 </div>
                 <div>
-                  <div class="title mb-3">Pilih Pembayaran</div>
+                  <div class="title mb-3 text-dark">Pilih Pembayaran</div>
                   <!-- <div class="row"> -->
 
                   <div class="row">

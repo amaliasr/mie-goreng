@@ -19,6 +19,9 @@ html {
   background: linear-gradient(114deg, rgba(41,96,161,1) 25%, rgba(194,57,212,1) 86%);
   height: auto; padding-top: 40px;padding-left: 40px;padding-right: 40px;padding-bottom: 20px; color: white;
 }
+.text-dark{
+  color: #525253;
+}
 .imgshape {
   float: left;
   width:  100%;
