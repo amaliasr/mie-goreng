@@ -147,6 +147,14 @@ class M_global extends CI_Model
 		JOIN game ON game_detail.id_game = game.id_game");
 		return $query->result();
 	}
+
+	public function getJumlahhistory($param)
+
+	{
+		$query = $this->db->query("SELECT * FROM game_detail
+		JOIN game ON game_detail.id_game = game.id_game");
+		return $query->result();
+	}
 }
 
 /* End of file m_global.php */
