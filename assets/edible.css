@@ -2,6 +2,32 @@ html {
 	scroll-behavior: smooth;
 }
 
+
+.bg-unicorn{
+  background: rgb(7,105,154);
+  background: linear-gradient(126deg, rgba(7,105,154,1) 0%, rgba(143,97,153,1) 85%);
+}
+.bg-header{
+  background: rgb(41,96,161);
+  background: linear-gradient(114deg, rgba(41,96,161,1) 25%, rgba(194,57,212,1) 86%);
+  color: white;
+  height: auto;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.bg-informasi{
+  background-color: #90E0EF;
+  height: 200px;
+}
+.color-footer{
+  background: rgb(41,96,161);
+  background: linear-gradient(114deg, rgba(41,96,161,1) 25%, rgba(194,57,212,1) 86%);
+  height: auto; padding-top: 40px;padding-left: 40px;padding-right: 40px;padding-bottom: 20px; color: white;
+}
+.text-dark{
+  color: #525253;
+}
+
 .bg-unicorn {
 	background: rgb(7, 105, 154);
 	background: linear-gradient(
@@ -35,6 +61,7 @@ html {
 	padding-right: 40px;
 	padding-bottom: 20px;
 	color: white;
+
 }
 .imgshape {
 	float: left;
