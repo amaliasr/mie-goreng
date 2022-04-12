@@ -82,6 +82,7 @@
         html += '<th>#</th>'
         html += '<th>Kode Transaksi</th>'
         html += '<th>Nama Item</th>'
+        html += '<th>Tanggal</th>'
         html += '<th>Harga Item</th>'
         html += '<th>No. Telp</th>'
         html += '<th>Status</th>'
@@ -94,6 +95,7 @@
                 html += '<td>' + (key + 1) + '</td>'
                 html += '<td>' + value['kode_transaksi'] + '</td>'
                 html += '<td>' + value['nama_game_detail'] + '</td>'
+                html += '<td>' + value['tanggal'] + '</td>'
                 html += '<td>' + number_format(value['harga_item']) + '</td>'
                 html += '<td>' + value['no_telp'] + '</td>'
                 if (toTitleCase(value['status']) == "Complete") {
