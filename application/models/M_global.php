@@ -148,7 +148,6 @@ class M_global extends CI_Model
 		return $query->result();
 	}
 
-
 	public function getJumlahhistory($param)
 	{
 		$query = $this->db->query(" SELECT COUNT(t.id) as jumlah_row FROM `transaction` t JOIN game_detail gd ON t.id_game_detail = gd.id_game_detail WHERE kode_transaksi = '$param' OR no_telp = '$param' ORDER BY id DESC");
