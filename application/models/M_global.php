@@ -147,7 +147,6 @@ class M_global extends CI_Model
 		JOIN game ON game_detail.id_game = game.id_game");
 		return $query->result();
 	}
-<<<<<<< Updated upstream
 
 	public function getJumlahhistory($param)
 	{
@@ -158,14 +157,7 @@ class M_global extends CI_Model
 	{
 		$query = $this->db->query(" SELECT t.id, t.kode_transaksi, gd.id_game_detail, gd.nama_game_detail, t.no_telp, t.harga_item, t.status FROM `transaction` t JOIN game_detail gd ON t.id_game_detail = gd.id_game_detail WHERE kode_transaksi = '$param' OR no_telp = '$param' ORDER BY id DESC");
 		return $query->result();
-<<<<<<< Updated upstream
   }
-=======
-=======
-	}
->>>>>>> Stashed changes
-	// coba pull
->>>>>>> Stashed changes
 }
 
 /* End of file m_global.php */
