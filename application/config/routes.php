@@ -67,6 +67,7 @@ $route['minmin/payment'] = "admin/index/payment";
 $route['minmin/hint'] = "admin/index/hint";
 $route['minmin/item'] = "admin/index/item";
 $route['minmin/input'] = "admin/index/input";
+$route['minmin/transaksi'] = "admin/index/transaksi";
 
 $route['minmin/tambah_konten'] = "admin/tambah_konten";
 $route['minmin/tambah_menu'] = "admin/tambah_menu";
@@ -93,6 +94,8 @@ $route['minmin/tambah_game'] = "admin/tambah_game";
 $route['minmin/export_all_pelamar'] = "admin/export_all_pelamar";
 $route['minmin/tambah_item'] = "admin/tambah_item";
 $route['minmin/tambah_input'] = "admin/tambah_input";
+$route['minmin/search_trans'] = "admin/search_transaction";
+$route['minmin/update_trans'] = "admin/update_transaction";
 
 $route['minmin/(:any)/(:any)'] = "admin/$1/$2";
 $route['minmin/produk/(:any)'] = "admin/produk/$1";

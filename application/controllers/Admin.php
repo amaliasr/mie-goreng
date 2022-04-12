@@ -1106,6 +1106,22 @@ class Admin extends CI_Controller
 		$this->session->set_flashdata('notif', '<div class="alert alert-success"><b>Success!</b> Data berhasil Diubah!</div>');
 		redirect('minmin/produk/' . $link_url);
 	}
+	public function search_transaction()
+	{
+		$stringParam = $this->input->post('param');
+
+		$data = $this->m_global->getHistoryForAdmin($stringParam);
+		echo json_encode($data);
+	}
+	public function update_transaction()
+	{
+		$kodeTrans = $this->input->post('kode_trans');
+		$param = $this->input->post('param');
+		$data = array(
+			"status" => $param,
+		);
+		$this->m_global->updateStatusTrans($kodeTrans, $data);
+	}
 }
 
 /* End of file Admin.php */
